@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <form class="container position-relative g-2 position-absolute top-50 start-50 translate-middle row">
+        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/U4TRBAHH7BAFJE5AEWZ3JCEBYU.jpg"
+            class="img-thumbnail modal-sm " alt="Endereco imagem login">
+        <div class="mb-3">
+            <label for="nomeCadastro" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="FormNomeCadastro">
+        </div>
+        <div class="mb-3">
+            <label for="sobrenomeCadastro" class="form-label">Sobrenome</label>
+            <input type="text" class="form-control" id="FormSobrenomeCadastro">
+        </div>
+        <div class="form-group col-md-6">
+            <label>CPF</label>
+            <input type="text" class="form-control" required pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}">
+        </div>
+        <div class="form-group mb-3 col-md-6">
+            <label>CEP</label>
+            <input type="text" class="form-control" required pattern="[0-9]{5}\-?[0-9]{3}">
+        </div>
+
+        <div class="form-group mb-3 col-md-2">
+            <label>Numero</label>
+            <input type="text" class="form-control" required pattern="[0-9]{5}\-?[0-9]{3}">
+        </div>
+
+        <div class="form-group mb-3 col-md-6">
+            <label></label>
+            <input type="text" class="form-control" required pattern="[0-9]{5}\-?[0-9]{3}">
+        </div>
+
+        <div class="form-group mb-3 col-md-6">
+            <label>CEP</label>
+            <input type="text" class="form-control" required pattern="[0-9]{5}\-?[0-9]{3}">
+        </div>
+
+        <div class="mb-3 d-flex justify-content-center row">
+            <div class="d-grid col-auto">
+                <button type="submit" id="btnCancel" class="btn btn-primary" required>Cancel</button>
+            </div>
+            <div class="d-grid col-auto">
+                <button type="submit" for="pass" id="btnAplicar" class="btn btn-primary" required>Aplicar</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        var modalLogin = document.getElementById('btnCancel');
+        var user = document.getElementById('inputLogin').value
+        var password = document.getElementById('inputPassword')
+
+        modalLogin.addEventListener('click', function (event) {
+            if ((!user.value || !password.value) || !(user.value == 'admin' && password.value == 'admin')) {
+                return alert('Preencha todos os campos / coloque user valido')
+            } else {
+                window.location.href = 'cadastro.html'
+            }
+        })
+
+        var modalCancel = document.getElementById('btnCancel');
+        modalCancel.addEventListener('click', function (event) {
+            document.getElementById('inputLogin').value = ''
+            document.getElementById('inputPassword') = 0
+        })
+    </script>
+</body>
+
+</html>
