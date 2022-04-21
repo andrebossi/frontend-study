@@ -27,7 +27,7 @@
                 <button type="submit" id="btnCancel" class="btn btn-primary">Cancel</button>
             </div>
             <div class="d-grid gap-2 col">
-                <button type="submit" for="pass" id="btnLogin" class="btn btn-primary" required>Login</button>
+                <button type="submit" for="login" id="btnLogin" class="btn btn-primary" required>Login</button>
             </div>
         </div>
     </form>
@@ -35,12 +35,13 @@
     <script>
         var btnLogin = document.getElementById('btnLogin');
         var user = document.getElementById('inputLogin');
-        var password = document.getElementById('inputPassword');
+        var password = document.getElementById('passwordLogin');
 
         btnLogin.addEventListener('click', function (event) {
-            if ((!user.value || !password.value) || !(user.value == 'admin' && password.value == 'admin')) {
+            if ((!user.value || !password.value) || !(user.value == 'admin@admin' && password.value == 'admin')) {
                 return alert('Preencha todos os campos / coloque user valido')
             } else {
+                alert('Login realizado com sucesso');
                 window.location.href = 'cadastro.html';
             }
         })
